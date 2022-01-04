@@ -1,8 +1,12 @@
-import tkinter as Tkinter
+try:
+	import Tkinter
+except:
+	import tkinter as Tkinter
 import math
 import time
 class main(Tkinter.Tk):
     def __init__(self):
+        Tkinter.Tk.__init__(self)
         self.x = 150
         self.y = 150
         self.length = 50 # clock hand length
@@ -19,10 +23,15 @@ class main(Tkinter.Tk):
         self.canvas.create_image(150, 150, image=self.image)
         return
 
+    def create_canvas_for_shapes(self):
+        self.canvas = Tkinter.Canvas(self, bg='black')
+        self.canvas.pack(expand='yes', fill='both')
+        return
+
     def create_sticks(self):
         self.sticks = []
         for i in range(3):
-            store = self.canvas.creat_line(self.x, self.y, self.x+self.length,self.y+self.length,width=2, fill='red')
+            store = self.canvas.create_line(self.x, self.y, self.x+self.length,self.y+self.length,width=2, fill='red')
             self.sticks.append(store)
         return
     
@@ -35,7 +44,7 @@ class main(Tkinter.Tk):
         for n,i in enumerate(now):
             x, y = self.canvas.coords(self.sticks[n])[0: 2]
             cr = [x, y]
-            cr.append(self.length*math.cos(match.radians(i*6)-math.radians(90))+slef.x)
+            cr.append(self.length*math.cos(math.radians(i*6)-math.radians(90))+slef.x)
             cr.append(self.length*math.sin(math.radians(i*6)-math.radians(90))+self.y)
             self.canvas.coords(self.sticks[n], tuple(cr))
         return
