@@ -1,7 +1,6 @@
 import tkinter as Tkinter
 import math
 import time
-
 class main(Tkinter.Tk):
     def __init__(self):
         self.x = 150
