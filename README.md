@@ -1,20 +1,18 @@
-# TicTacToe GUI that is very hard to beat.
+# An Analog Clock.
 
  <hr>
 
- ## How to Play?
- - Install tkinter: 
- ```
- pip install tkinter
- ```
- - Clone/ Download gui.py 
- - Run gui.py
+ ## How to Use?
+ - Install tkinter: <code>pip install tkinter</code>
+ - Clone/ Download this repository
+ - Run clock.py
  
 <hr> 
 
 ## Packages Used
 - tkinter
-- functools
-- random
-- copy
+- math
+- time
+
+<hr>
 
